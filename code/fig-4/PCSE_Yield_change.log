@@ -1,0 +1,164 @@
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default.nc
+rice 0 SSP126 mean: -11.198569559860823
+rice 0 SSP126 std: 14.976665106462082
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default.nc
+rice 0 SSP126 mean: -12.61982005555543
+rice 0 SSP126 std: 15.483308546596003
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default.nc
+rice 0 SSP126 mean: 20.29248216453121
+rice 0 SSP126 std: 21.67298636766934
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default.nc
+rice 0 SSP126 mean: 1.8667740816986418
+rice 0 SSP126 std: 22.155069025103177
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp126_default.nc
+maize 1 SSP126 mean: -2.5216895170169145
+maize 1 SSP126 std: 11.526392882098463
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp245_default.nc
+maize 1 SSP126 mean: -13.413870116786104
+maize 1 SSP126 std: 12.672861802372914
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp370_default.nc
+maize 1 SSP126 mean: -5.373655935735092
+maize 1 SSP126 std: 13.203846970339347
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp585_default.nc
+maize 1 SSP126 mean: -21.36914506892792
+maize 1 SSP126 std: 15.747169703000694
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp126_default.nc
+soybean 2 SSP126 mean: -5.473757827994772
+soybean 2 SSP126 std: 4.958251460753569
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp245_default.nc
+soybean 2 SSP126 mean: -2.05648229346007
+soybean 2 SSP126 std: 6.465235352578224
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp370_default.nc
+soybean 2 SSP126 mean: 0.29599635007418634
+soybean 2 SSP126 std: 6.87793337038565
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp585_default.nc
+soybean 2 SSP126 mean: -4.171115848417215
+soybean 2 SSP126 std: 8.744996161157152
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp126_co2.nc
+rice 0 SSP126 mean: -22.847362445769072
+rice 0 SSP126 std: 14.57871845814211
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp245_co2.nc
+rice 0 SSP126 mean: -32.37790678669663
+rice 0 SSP126 std: 15.44315774192358
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp370_co2.nc
+rice 0 SSP126 mean: -16.5362971420554
+rice 0 SSP126 std: 27.627305954425964
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp585_co2.nc
+rice 0 SSP126 mean: -33.34661407080133
+rice 0 SSP126 std: 28.17934151243994
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp126_co2.nc
+maize 1 SSP126 mean: -5.383275469393859
+maize 1 SSP126 std: 11.964534463380646
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp245_co2.nc
+maize 1 SSP126 mean: -18.64464014820765
+maize 1 SSP126 std: 13.950689033752308
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp370_co2.nc
+maize 1 SSP126 mean: -15.276462691015752
+maize 1 SSP126 std: 17.915025877589272
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp585_co2.nc
+maize 1 SSP126 mean: -31.729337324814885
+maize 1 SSP126 std: 20.01864584438583
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp126_co2.nc
+soybean 2 SSP126 mean: -11.453697197379686
+soybean 2 SSP126 std: 5.442871433717259
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp245_co2.nc
+soybean 2 SSP126 mean: -13.915109795998914
+soybean 2 SSP126 std: 8.379908062049806
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp370_co2.nc
+soybean 2 SSP126 mean: -17.078085319421195
+soybean 2 SSP126 std: 13.016161225246474
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp585_co2.nc
+soybean 2 SSP126 mean: -23.966060040587735
+soybean 2 SSP126 std: 16.287581938131837
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp126_temperature.nc
+rice 0 SSP126 mean: 27.832110728330164
+rice 0 SSP126 std: 15.066047159288223
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp245_temperature.nc
+rice 0 SSP126 mean: 28.056606923283375
+rice 0 SSP126 std: 25.443326790162573
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp370_temperature.nc
+rice 0 SSP126 mean: 95.18169011967746
+rice 0 SSP126 std: 53.25289085324473
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp585_temperature.nc
+rice 0 SSP126 mean: 90.68713476216644
+rice 0 SSP126 std: 56.2674900941879
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp126_temperature.nc
+maize 1 SSP126 mean: 23.64529850820416
+maize 1 SSP126 std: 9.134211607947261
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp245_temperature.nc
+maize 1 SSP126 mean: 13.55185288849348
+maize 1 SSP126 std: 11.398131771135734
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp370_temperature.nc
+maize 1 SSP126 mean: 27.728933219521796
+maize 1 SSP126 std: 15.038881144879982
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp585_temperature.nc
+maize 1 SSP126 mean: 17.881456445867606
+maize 1 SSP126 std: 15.252106396922978
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp126_temperature.nc
+soybean 2 SSP126 mean: 11.061637751357814
+soybean 2 SSP126 std: 4.535505012985074
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp245_temperature.nc
+soybean 2 SSP126 mean: 14.686960477464027
+soybean 2 SSP126 std: 9.535672905018064
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp370_temperature.nc
+soybean 2 SSP126 mean: 25.44289733016023
+soybean 2 SSP126 std: 16.42299633312833
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp585_temperature.nc
+soybean 2 SSP126 mean: 27.452297532199374
+soybean 2 SSP126 std: 20.051179373226198
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp126_precipitation.nc
+rice 0 SSP126 mean: -15.848909157755639
+rice 0 SSP126 std: 7.300801381004363
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp245_precipitation.nc
+rice 0 SSP126 mean: -12.19084710189717
+rice 0 SSP126 std: 9.559390505341991
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp370_precipitation.nc
+rice 0 SSP126 mean: -5.030481178652159
+rice 0 SSP126 std: 17.798887237325584
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp585_precipitation.nc
+rice 0 SSP126 mean: -16.375407136311466
+rice 0 SSP126 std: 21.10264362043381
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp126_precipitation.nc
+maize 1 SSP126 mean: -16.25851371818638
+maize 1 SSP126 std: 7.979590183174055
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp245_precipitation.nc
+maize 1 SSP126 mean: -16.898722020057033
+maize 1 SSP126 std: 9.30070240538383
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp370_precipitation.nc
+maize 1 SSP126 mean: -14.17735181892014
+maize 1 SSP126 std: 12.03543084456927
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp585_precipitation.nc
+maize 1 SSP126 mean: -22.90551026157849
+maize 1 SSP126 std: 15.77801172237618
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp126_precipitation.nc
+soybean 2 SSP126 mean: -6.814065726730939
+soybean 2 SSP126 std: 2.907012001767312
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp245_precipitation.nc
+soybean 2 SSP126 mean: -1.2337649499848096
+soybean 2 SSP126 std: 3.663447030519341
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp370_precipitation.nc
+soybean 2 SSP126 mean: -2.195418093381945
+soybean 2 SSP126 std: 5.682268183284943
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp585_precipitation.nc
+soybean 2 SSP126 mean: -5.666442449612789
+soybean 2 SSP126 std: 8.938749290725406
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+soybean
+plot end

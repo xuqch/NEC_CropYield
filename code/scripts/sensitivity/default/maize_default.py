@@ -1,0 +1,301 @@
+import yaml
+import pcse
+import sys, os
+import numpy as np
+import xarray as xr
+import pandas as pd
+import multiprocessing
+from tqdm import tqdm, trange
+from itertools import product
+from joblib import Parallel, delayed
+from pcse.base import ParameterProvider
+from pcse.fileinput import CABOFileReader
+from pcse.util import WOFOST80SiteDataProvider
+from pcse.fileinput import YAMLCropDataProvider
+from pcse.exceptions import WeatherDataProviderError
+from pcse.models import Wofost72_WLP_FD, Wofost80_WLP_FD_beta
+from Xarrayweatherdataprovider import XarrayWeatherDataProvider
+
+data_dir = os.path.join(os.getcwd(), "/tera04/zhwei/PCSE/data/")
+co2data_dir = os.path.join(data_dir, "co2/")
+Syear = 2015
+Eyear = 2100
+Sdate = str(str(Syear) + "0101")
+Edate = str(str(Eyear) + "0101")
+years = range(Syear, Eyear)
+print(" ")
+print("**********************")
+print("This code was built with:")
+print("python version: %s " % sys.version)
+print("PCSE version: %s" % pcse.__version__)
+print("Syear: %s" % Syear)
+print("Eyear: %s" % Eyear)
+fname = os.path.join('/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/', "output/sensitivity/default/")
+print("output file: %s" % fname)
+print("**********************")
+print(" ")
+
+
+def timer(func):
+    def func_wrapper(*args, **kwargs):
+        from time import time
+        time_start = time()
+        result = func(*args, **kwargs)
+        time_end = time()
+        time_spend = (time_end - time_start) / 3600.
+        print('%s cost time: %.3f hours' % (func.__name__, time_spend))
+        return result
+
+    return func_wrapper
+
+
+def FilePrapare(metrodata_dir, ssp):
+    # get data ready!
+    VarFile = ('%s/PCSE_input_%s.nc' % (metrodata_dir, ssp))
+    with xr.open_dataset(VarFile, decode_times=True, drop_variables=['height_2', 'height'],
+                         chunks={'time': 3650}) as ds:
+        try:
+            print(" ")
+            print("**********************")
+            print(" ")
+            print("forcing data prepared")
+            print(" ")
+            print("**********************")
+            print(" ")
+
+        except:
+            EOFError
+    return ds
+
+
+def agro(year):
+    agro_maize = """
+- {year}-03-02:
+    CropCalendar:
+        crop_name: '{crop}'
+        variety_name: 'Maize_VanHeemst_1988'
+        crop_start_date: {year}-04-15
+        crop_start_type: sowing
+        crop_end_date:  
+        crop_end_type: maturity
+        max_duration: 300
+    TimedEvents: null
+    StateEvents: null
+- {Nyear}-03-01: null
+  """
+    agromanagement = yaml.safe_load(agro_maize.format(year=year, Nyear=year + 1, crop='maize'))
+    return agromanagement
+
+
+def Initial(data_dir, Start_time, dco2, ds):
+    # crop_data = YAMLCropDataProvider(os.path.join(data_dir+'crop/', 'maize.yaml'))
+    crop_data = YAMLCropDataProvider(os.path.join(data_dir, 'crop'))
+    crop_data.set_active_crop('maize', 'Maize_VanHeemst_1988')
+    soilfile = os.path.join(data_dir, 'soil', 'ec3.soil')
+    soild = CABOFileReader(soilfile)
+    ## get basic information of array
+    all_runs = product(years)
+    bk = False
+    target_lon = 121.375  #
+    target_lat = 38.875
+    ds = ds.sel(lon=[target_lon], lat=[target_lat], method="nearest")
+    print(ds['tasmax'].values)
+    for ilon in enumerate(ds.lon.values):
+        for ilat in enumerate(ds.lat.values):
+            da = ds.sel(lon=ilon[1], lat=ilat[1])
+            S_time = Start_time.sel(lon=ilon[1], lat=ilat[1])
+            if da.tasmax.values[0] > -9999.0:
+                print("--Continue location: lon-->%s, lat-->%s" % (ilon[1], ilat[1]))
+                wdp = XarrayWeatherDataProvider(ELEVE=200.0, xrdata=da)
+                appended_data = []
+                for i, inputs in enumerate(all_runs):
+                    year = inputs[0]
+                    print("       simulation year: %s" % year)
+                    agromanagement = agro(year)
+                    sited = WOFOST80SiteDataProvider(WAV=10, CO2=dco2.loc[year].values, SMLIM=0.35)  # , NAVAILI=200.0,PAVAILI=200.0,KAVAILI=200.0
+                    parameters = ParameterProvider(cropdata=crop_data, soildata=soild, sitedata=sited)
+                    wofost = Wofost80_WLP_FD_beta(parameters, wdp, agromanagement)
+                    wofost.run_till_terminate()
+                    # except:
+                    #    print("failed because of missing weather data.")
+                    df = pd.DataFrame(wofost.get_output()).set_index(['day'])
+                    appended_data.append(df)
+                appended_data = pd.concat(appended_data)
+                kk = xr.Dataset.from_dataframe(appended_data)
+
+                outputshape = ((len(kk['LAI']), 1, 1))
+                temp = {}
+                temp['DVS'] = np.full(outputshape, np.nan)
+                temp['LAI'] = np.full(outputshape, np.nan)
+                temp['TAGP'] = np.full(outputshape, np.nan)
+                temp['TWSO'] = np.full(outputshape, np.nan)
+                temp['TWLV'] = np.full(outputshape, np.nan)
+                temp['TWST'] = np.full(outputshape, np.nan)
+                temp['TWRT'] = np.full(outputshape, np.nan)
+                temp['TRA'] = np.full(outputshape, np.nan)
+                temp['RD'] = np.full(outputshape, np.nan)
+                temp['SM'] = np.full(outputshape, np.nan)
+                temp['WWLOW'] = np.full(outputshape, np.nan)
+                temp['time1'] = (kk['day']).astype(np.datetime64)
+                temp['lat'] = np.full((1), np.nan)
+                temp['lon'] = np.full((1), np.nan)
+                bk = True
+                break
+        if (bk):
+            break
+    print(" ")
+    print("---------------------")
+    print(" ")
+    print("initial setting  done")
+    print(" ")
+    print("---------------------")
+    print(" ")
+
+    return temp
+
+
+def core_cal(ds, ilonn, ilatn, temp, dco2):
+    crop_data = YAMLCropDataProvider(os.path.join(data_dir, 'crop'))
+    crop_data.set_active_crop('maize', 'Maize_VanHeemst_1988')
+    soilfile = os.path.join(data_dir, 'soil', 'ec3.soil')
+    soild = CABOFileReader(soilfile)
+    ilon = ds.lon.values[ilonn]
+    ilat = ds.lat.values[ilatn]
+    if ds['tasmax'].values[5, ilatn, ilonn] > -9999.0:
+        da = ds.sel(lon=ilon, lat=ilat)
+        wdp = XarrayWeatherDataProvider(ELEVE=200.0, xrdata=da)
+        all_runs = product(years)
+        appended_data = []
+        for i, inputs in enumerate(all_runs):
+            year = inputs[0]
+            agromanagement = agro(year)
+
+            sited = WOFOST80SiteDataProvider(WAV=10, CO2=dco2.loc[year].values, SMLIM=0.35)  # , NAVAILI=150, PAVAILI=50, KAVAILI=150
+            parameters = ParameterProvider(cropdata=crop_data, soildata=soild, sitedata=sited)
+
+            wofost = Wofost80_WLP_FD_beta(parameters, wdp, agromanagement)
+            wofost.run_till_terminate()
+            df = pd.DataFrame(wofost.get_output()).set_index(['day'])
+            appended_data.append(df)
+        appended_data = pd.concat(appended_data)
+        kk = xr.Dataset.from_dataframe(appended_data)
+
+        temp['DVS'][:, 0, 0] = kk['DVS'].values
+        temp['LAI'][:, 0, 0] = kk['LAI'].values
+        temp['TAGP'][:, 0, 0] = kk['TAGP'].values
+        temp['TWSO'][:, 0, 0] = kk['TWSO'].values
+        temp['TWLV'][:, 0, 0] = kk['TWLV'].values
+        temp['TWST'][:, 0, 0] = kk['TWST'].values
+        temp['TWRT'][:, 0, 0] = kk['TWRT'].values
+        temp['TRA'][:, 0, 0] = kk['TRA'].values
+        temp['RD'][:, 0, 0] = kk['RD'].values
+        temp['SM'][:, 0, 0] = kk['SM'].values
+        temp['WWLOW'][:, 0, 0] = kk['WWLOW'].values
+        temp['time1'] = (kk['day']).astype(np.datetime64)
+        temp['lat'] = np.atleast_1d(ilat)
+        temp['lon'] = np.atleast_1d(ilon)
+
+    return temp
+
+
+@timer
+def cal_run(ds, temp, Start_time, dk, dco2):
+    max_cpu = os.cpu_count()  ##用来计算现在可以获得多少cpu核心。 也可以用multipocessing.cpu_count()
+    # n=0
+    num_cores = multiprocessing.cpu_count()
+
+    for ilonn in range(len(ds.lon.values)):
+        # for ilatn in range(len(ds.lat.values)):
+        # n=n+1
+        print("now at location: lon-->%s" % (ds.lon.values[ilonn]))
+        temp0 = Parallel(n_jobs=num_cores)(
+            delayed(core_cal)(ds, ilonn, i, temp, dco2) for i in range(len(ds.lat.values)))
+        for ilatn in range(len(ds.lat.values)):
+            temp1 = temp0[ilatn]
+            # print(test['lat'])
+            if temp1['lat'] > 0:
+                dk['DVS'][:, ilatn, ilonn] = temp1['DVS'][:, 0, 0]
+                dk['LAI'][:, ilatn, ilonn] = temp1['LAI'][:, 0, 0]
+                dk['TAGP'][:, ilatn, ilonn] = temp1['TAGP'][:, 0, 0]
+                dk['TWSO'][:, ilatn, ilonn] = temp1['TWSO'][:, 0, 0]
+                dk['TWLV'][:, ilatn, ilonn] = temp1['TWLV'][:, 0, 0]
+                dk['TWST'][:, ilatn, ilonn] = temp1['TWST'][:, 0, 0]
+                dk['TWRT'][:, ilatn, ilonn] = temp1['TWRT'][:, 0, 0]
+                dk['TRA'][:, ilatn, ilonn] = temp1['TRA'][:, 0, 0]
+                dk['RD'][:, ilatn, ilonn] = temp1['RD'][:, 0, 0]
+                dk['SM'][:, ilatn, ilonn] = temp1['SM'][:, 0, 0]
+                dk['WWLOW'][:, ilatn, ilonn] = temp1['WWLOW'][:, 0, 0]
+            # core_cal(ds,ilonn,ilatn,parameters,temp) #.compute()
+    return dk
+
+# @timer
+# def cal_run(ds, temp, Start_time, dk, dco2):
+#     for ilonn in range(2):#len(ds.lon.values)
+#         print("now at location: lon-->%s" % (ds.lon.values[ilonn]))
+#         pbar = tqdm(range(len(ds.lat.values)), ncols=140)
+#         for ilatn in pbar:
+#             pbar.set_description("Now loacation at %.1f" % (ds.lat.values[ilatn]))
+#             temp1 = core_cal(ds, ilonn, ilatn, temp, dco2)
+#             if temp1['lat'] > 0:
+#                 dk['DVS'][:, ilatn, ilonn] = temp1['DVS'][:, 0, 0]
+#                 dk['LAI'][:, ilatn, ilonn] = temp1['LAI'][:, 0, 0]
+#                 dk['TAGP'][:, ilatn, ilonn] = temp1['TAGP'][:, 0, 0]
+#                 dk['TWSO'][:, ilatn, ilonn] = temp1['TWSO'][:, 0, 0]
+#                 dk['TWLV'][:, ilatn, ilonn] = temp1['TWLV'][:, 0, 0]
+#                 dk['TWST'][:, ilatn, ilonn] = temp1['TWST'][:, 0, 0]
+#                 dk['TWRT'][:, ilatn, ilonn] = temp1['TWRT'][:, 0, 0]
+#                 dk['TRA'][:, ilatn, ilonn] = temp1['TRA'][:, 0, 0]
+#                 dk['RD'][:, ilatn, ilonn] = temp1['RD'][:, 0, 0]
+#                 dk['SM'][:, ilatn, ilonn] = temp1['SM'][:, 0, 0]
+#                 dk['WWLOW'][:, ilatn, ilonn] = temp1['WWLOW'][:, 0, 0]
+#     return dk
+
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    import time
+
+    runname = 'default'
+    ssps = ['ssp126', 'ssp245', 'ssp370', 'ssp585']
+    # ssps = ['ssp245']
+    for ssp in ssps:
+        print(ssp)
+        time_begin = time.time()
+        header_list = ["year", "co2"]
+        dco2 = pd.read_csv(f'{co2data_dir}co2_{ssp}_annual_2015_2100.txt', delimiter=r"\s+", names=header_list)
+        dco2 = dco2.set_index(['year'])
+        Start_time = xr.open_dataset('/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/pr_t/pr_t_Growthday_%s.nc' % (ssp)).start
+        print(">>>>time prepared  done")
+
+        ds = FilePrapare(f'/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/', ssp)
+        # ds = ds.sel(time=slice(Sdate, Edate))
+        # target_lon = 121.375  #
+        # target_lat = 38.875
+        # ds = ds.sel(lon=[target_lon], lat=[target_lat], method="nearest")
+        temp = Initial(data_dir, Start_time, dco2, ds)
+
+        outputshape = (len(temp['time1']), len(ds.lat), len(ds.lon))
+        dk = xr.Dataset({
+            'DVS': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'LAI': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TAGP': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TWSO': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TWLV': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TWST': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TWRT': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'TRA': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'RD': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'SM': (('time', 'lat', 'lon'), np.full(outputshape, np.nan)),
+            'WWLOW': (('time', 'lat', 'lon'), np.full(outputshape, np.nan))
+        },
+            coords={'time': (('time'), temp['time1'].values),
+                    'lat': (('lat'), ds.lat.values),
+                    'lon': (('lon'), ds.lon.values),
+                    })
+        cal_run(ds, temp, Start_time, dk, dco2)
+        print(">>>> file calculated done")
+        dk.to_netcdf('%s/maize_output_%s_%s.nc' % (fname, ssp, runname), engine='netcdf4')
+        time_end = time.time()  # 结束时间
+        timea = time_end - time_begin
+        print('runtime:', timea / 60)  # 结束时间-开始时间
+    print('------------end--------------')

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-5/box.py", line 355, in <module>
+    get_data(path, Figout, crop, run)
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-5/box.py", line 338, in get_data
+    box(data_crop, Figout, run)
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-5/box.py", line 221, in box
+    axes.text(position[j]-0.1, y, f"{np.mediandata(data):.3f}", fontsize=20, c='black')
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/numpy/__init__.py", line 315, in __getattr__
+    raise AttributeError("module {!r} has no attribute "
+AttributeError: module 'numpy' has no attribute 'mediandata'

@@ -1,0 +1,360 @@
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp126_co2.nc
+rice 0 SSP126 mean: 23.39929811153462
+rice 0 SSP126 std: 21.685488726230304
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp245_co2.nc
+rice 0 SSP126 mean: -8.463291208218461
+rice 0 SSP126 std: 19.886132180272188
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp370_co2.nc
+rice 0 SSP126 mean: -31.272083877849077
+rice 0 SSP126 std: 25.27753972906978
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//rice_output_ssp585_co2.nc
+rice 0 SSP126 mean: -45.90994806573573
+rice 0 SSP126 std: 27.519773273396346
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp126_co2.nc
+maize 1 SSP126 mean: 6.550683540062865
+maize 1 SSP126 std: 10.901940420622042
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp245_co2.nc
+maize 1 SSP126 mean: -17.574365648974076
+maize 1 SSP126 std: 11.043857056599002
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp370_co2.nc
+maize 1 SSP126 mean: -23.236223916300794
+maize 1 SSP126 std: 13.90672447670186
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//maize_output_ssp585_co2.nc
+maize 1 SSP126 mean: -24.08739295863671
+maize 1 SSP126 std: 21.343468618127087
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp126_co2.nc
+soybean 2 SSP126 mean: 5.929901154130788
+soybean 2 SSP126 std: 4.077408975748418
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp245_co2.nc
+soybean 2 SSP126 mean: -4.562827150435755
+soybean 2 SSP126 std: 6.008597372571356
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp370_co2.nc
+soybean 2 SSP126 mean: -10.022359164674013
+soybean 2 SSP126 std: 11.24602549353485
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/co2//soybean_output_ssp585_co2.nc
+soybean 2 SSP126 mean: -17.221966052402404
+soybean 2 SSP126 std: 15.213619647865967
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp126_temperature.nc
+rice 0 SSP126 mean: 40.89642756633342
+rice 0 SSP126 std: 12.112922248812854
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp245_temperature.nc
+rice 0 SSP126 mean: 56.0443668228453
+rice 0 SSP126 std: 23.578903451886596
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp370_temperature.nc
+rice 0 SSP126 mean: 54.96414443915861
+rice 0 SSP126 std: 31.654585987417992
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//rice_output_ssp585_temperature.nc
+rice 0 SSP126 mean: 44.368763680585914
+rice 0 SSP126 std: 33.14121714145459
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp126_temperature.nc
+maize 1 SSP126 mean: 15.41143184118065
+maize 1 SSP126 std: 5.5967799083531675
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp245_temperature.nc
+maize 1 SSP126 mean: 4.261190640212076
+maize 1 SSP126 std: 6.201764718798021
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp370_temperature.nc
+maize 1 SSP126 mean: 9.572639349251068
+maize 1 SSP126 std: 7.198865245385869
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//maize_output_ssp585_temperature.nc
+maize 1 SSP126 mean: 12.262442441520875
+maize 1 SSP126 std: 7.836987119495291
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp126_temperature.nc
+soybean 2 SSP126 mean: 10.222167882333403
+soybean 2 SSP126 std: 2.952472078258633
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp245_temperature.nc
+soybean 2 SSP126 mean: 14.640127020166304
+soybean 2 SSP126 std: 7.226201902637906
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp370_temperature.nc
+soybean 2 SSP126 mean: 22.9538328350739
+soybean 2 SSP126 std: 13.177908102396865
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/temperature//soybean_output_ssp585_temperature.nc
+soybean 2 SSP126 mean: 23.46394553194901
+soybean 2 SSP126 std: 16.284529005215845
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp126_precipitation.nc
+rice 0 SSP126 mean: 8.425365887918225
+rice 0 SSP126 std: 7.7362904847908815
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp245_precipitation.nc
+rice 0 SSP126 mean: -2.1632169903303997
+rice 0 SSP126 std: 9.292077549695565
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp370_precipitation.nc
+rice 0 SSP126 mean: -10.076247613640469
+rice 0 SSP126 std: 20.955248389646332
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//rice_output_ssp585_precipitation.nc
+rice 0 SSP126 mean: -22.096673051217486
+rice 0 SSP126 std: 26.90046707374019
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp126_precipitation.nc
+maize 1 SSP126 mean: -3.382271149835943
+maize 1 SSP126 std: 8.224500739022613
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp245_precipitation.nc
+maize 1 SSP126 mean: -13.627881193522352
+maize 1 SSP126 std: 7.116054840716574
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp370_precipitation.nc
+maize 1 SSP126 mean: -16.332390853826666
+maize 1 SSP126 std: 9.724435985706362
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//maize_output_ssp585_precipitation.nc
+maize 1 SSP126 mean: -20.254067182615465
+maize 1 SSP126 std: 16.819620958529555
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp126_precipitation.nc
+soybean 2 SSP126 mean: 6.728809578917803
+soybean 2 SSP126 std: 2.194976955306876
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp245_precipitation.nc
+soybean 2 SSP126 mean: 7.954936974870234
+soybean 2 SSP126 std: 4.003780283394563
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp370_precipitation.nc
+soybean 2 SSP126 mean: 8.303916574598189
+soybean 2 SSP126 std: 4.869775730509229
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/precipitation//soybean_output_ssp585_precipitation.nc
+soybean 2 SSP126 mean: 3.136587141564966
+soybean 2 SSP126 std: 8.77911722877324
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default.nc
+rice 0 SSP126 mean: 40.96274245044753
+rice 0 SSP126 std: 21.748107709484103
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default.nc
+rice 0 SSP126 mean: 17.487670690365352
+rice 0 SSP126 std: 19.007394741707703
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default.nc
+rice 0 SSP126 mean: -0.034004089911094514
+rice 0 SSP126 std: 18.052589017685012
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default.nc
+rice 0 SSP126 mean: -15.534530839333716
+rice 0 SSP126 std: 20.799020251552466
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp126_default.nc
+maize 1 SSP126 mean: 8.863782555572241
+maize 1 SSP126 std: 10.225834321217203
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp245_default.nc
+maize 1 SSP126 mean: -13.783630414918466
+maize 1 SSP126 std: 9.450333451427024
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp370_default.nc
+maize 1 SSP126 mean: -15.947497114589098
+maize 1 SSP126 std: 8.912202269285844
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp585_default.nc
+maize 1 SSP126 mean: -13.775563796422116
+maize 1 SSP126 std: 15.225595306946124
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp126_default.nc
+soybean 2 SSP126 mean: 12.715069480066724
+soybean 2 SSP126 std: 4.198151146606158
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp245_default.nc
+soybean 2 SSP126 mean: 8.199891574627019
+soybean 2 SSP126 std: 5.220931923198036
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp370_default.nc
+soybean 2 SSP126 mean: 8.170668494988783
+soybean 2 SSP126 std: 5.449567043676175
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//soybean_output_ssp585_default.nc
+soybean 2 SSP126 mean: 3.7903315625768736
+soybean 2 SSP126 std: 7.566059265638859
+soybean
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_add.nc
+Traceback (most recent call last):
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/core/dataset.py", line 1339, in _construct_dataarray
+    variable = self._variables[name]
+KeyError: 'runname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 158, in <module>
+    line_plot(scenarios, path, Figout, crop,pathvar,runname)
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 87, in line_plot
+    ds1 = ds1[f'{"runname"}']
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/core/dataset.py", line 1430, in __getitem__
+    return self._construct_dataarray(key)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/core/dataset.py", line 1341, in _construct_dataarray
+    _, name, variable = _get_virtual_variable(self._variables, name, self.dims)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/core/dataset.py", line 177, in _get_virtual_variable
+    raise KeyError(key)
+KeyError: 'runname'
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_add.nc
+rice 0 SSP126 mean: 5.0296777628240665
+rice 0 SSP126 std: 2.1782392524635767
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_add.nc
+rice 0 SSP126 mean: 6.920720630994206
+rice 0 SSP126 std: 3.1976281531256214
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_add.nc
+rice 0 SSP126 mean: 7.979439510915076
+rice 0 SSP126 std: 3.5370401675126635
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_add.nc
+rice 0 SSP126 mean: 6.426848383086106
+rice 0 SSP126 std: 3.358042324443462
+Traceback (most recent call last):
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 158, in <module>
+    line_plot(scenarios, path, Figout, crop,pathvar,runname)
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 117, in line_plot
+    plt.savefig(f'{Figout}/{scenarios}/{name}_output_{scenarios}_{"runname"}.eps', format='eps', dpi=800)  # timeseries_lines
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/pyplot.py", line 954, in savefig
+    res = fig.savefig(*args, **kwargs)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/figure.py", line 3274, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2338, in print_figure
+    result = print_method(
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2204, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/_api/deprecation.py", line 410, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/backends/backend_ps.py", line 869, in _print_ps
+    printer(fmt, outfile, dpi=dpi, dsc_comments=dsc_comments,
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/backends/backend_ps.py", line 1004, in _print_figure
+    with cbook.open_file_cm(outfile, "w", encoding="latin-1") as file:
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/cbook/__init__.py", line 506, in open_file_cm
+    fh, opened = to_filehandle(path_or_file, mode, True, encoding)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/matplotlib/cbook/__init__.py", line 492, in to_filehandle
+    fh = open(fname, flag, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: '/stu01/xuqch3/PCSE/scripts/code/fig-4//default_add/rice_output_default_add_runname.eps'
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_add.nc
+rice 0 SSP126 mean: 5.0296777628240665
+rice 0 SSP126 std: 2.1782392524635767
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_add.nc
+rice 0 SSP126 mean: 6.920720630994206
+rice 0 SSP126 std: 3.1976281531256214
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_add.nc
+rice 0 SSP126 mean: 7.979439510915076
+rice 0 SSP126 std: 3.5370401675126635
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_add.nc
+rice 0 SSP126 mean: 6.426848383086106
+rice 0 SSP126 std: 3.358042324443462
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//maize_output_ssp126_default_add.nc
+Traceback (most recent call last):
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 209, in _acquire_with_cache_info
+    file = self._cache[self._key]
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/lru_cache.py", line 55, in __getitem__
+    value = self._cache[key]
+KeyError: [<class 'netCDF4._netCDF4.Dataset'>, ('/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default/maize_output_ssp126_default_add.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '545fc27a-4222-4e3a-bef4-4b5afc44aec8']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 158, in <module>
+    line_plot(scenarios, path, Figout, crop,pathvar,runname)
+  File "/stu01/xuqch3/PCSE/scripts/code/fig-4/PCSE_Yield_change.py", line 84, in line_plot
+    with xr.open_dataset(VarFile) as ds1:
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/api.py", line 539, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 572, in open_dataset
+    store = NetCDF4DataStore.open(
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 376, in open
+    return cls(manager, group=group, mode=mode, lock=lock, autoclose=autoclose)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 323, in __init__
+    self.format = self.ds.data_model
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 385, in ds
+    return self._acquire()
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/netCDF4_.py", line 379, in _acquire
+    with self._manager.acquire_context(needs_lock) as root:
+  File "/home/xuqch3/anaconda3/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 197, in acquire_context
+    file, cached = self._acquire_with_cache_info(needs_lock)
+  File "/home/xuqch3/anaconda3/lib/python3.9/site-packages/xarray/backends/file_manager.py", line 215, in _acquire_with_cache_info
+    file = self._opener(*self._args, **kwargs)
+  File "src/netCDF4/_netCDF4.pyx", line 2330, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 1948, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: b'/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default/maize_output_ssp126_default_add.nc'
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+The PostScript backend does not support transparency; partially transparent artists will be rendered opaque.
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_add.nc
+rice 0 SSP126 mean: 5.0296777628240665
+rice 0 SSP126 std: 2.1782392524635767
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_add.nc
+rice 0 SSP126 mean: 6.920720630994206
+rice 0 SSP126 std: 3.1976281531256214
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_add.nc
+rice 0 SSP126 mean: 7.979439510915076
+rice 0 SSP126 std: 3.5370401675126635
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_add.nc
+rice 0 SSP126 mean: 6.426848383086106
+rice 0 SSP126 std: 3.358042324443462
+rice
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_twice.nc
+rice 0 SSP126 mean: 5.027139131742901
+rice 0 SSP126 std: 2.1908197067098962
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_twice.nc
+rice 0 SSP126 mean: 7.092649776055471
+rice 0 SSP126 std: 3.2154310486112823
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_twice.nc
+rice 0 SSP126 mean: 8.093919460473572
+rice 0 SSP126 std: 3.58717773470877
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_twice.nc
+rice 0 SSP126 mean: 6.4500766638568665
+rice 0 SSP126 std: 3.6271839247369386
+rice
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_triple.nc
+rice 0 SSP126 mean: 3.9670069379048676
+rice 0 SSP126 std: 1.764476729143709
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_triple.nc
+rice 0 SSP126 mean: 7.238749752606178
+rice 0 SSP126 std: 3.06547013902638
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_triple.nc
+rice 0 SSP126 mean: 8.521462426431915
+rice 0 SSP126 std: 3.261377766589548
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_triple.nc
+rice 0 SSP126 mean: 6.664697734013037
+rice 0 SSP126 std: 3.1768151825914144
+rice
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_add.nc
+rice 0 SSP126 mean: 1.63932042585684
+rice 0 SSP126 std: 2.45376181577357
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_add.nc
+rice 0 SSP126 mean: 4.484348355187832
+rice 0 SSP126 std: 4.059782176878158
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_add.nc
+rice 0 SSP126 mean: 2.9382512484186485
+rice 0 SSP126 std: 6.102593276951045
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_add.nc
+rice 0 SSP126 mean: 1.5287748241205308
+rice 0 SSP126 std: 8.07234791327696
+rice
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_twice.nc
+rice 0 SSP126 mean: 1.5995243455008226
+rice 0 SSP126 std: 2.4348896673135605
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_twice.nc
+rice 0 SSP126 mean: 4.113756959020776
+rice 0 SSP126 std: 4.102721311519608
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_twice.nc
+rice 0 SSP126 mean: 2.8912280884759105
+rice 0 SSP126 std: 6.180420605279485
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_twice.nc
+rice 0 SSP126 mean: 1.485824750684138
+rice 0 SSP126 std: 8.196568522825798
+rice
+plot end
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp126_default_triple.nc
+rice 0 SSP126 mean: 2.1115005396329103
+rice 0 SSP126 std: 2.4237397363805164
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp245_default_triple.nc
+rice 0 SSP126 mean: 3.86606036262095
+rice 0 SSP126 std: 3.9895352014377976
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp370_default_triple.nc
+rice 0 SSP126 mean: 2.5799734187996557
+rice 0 SSP126 std: 6.155177002240574
+/stu01/xuqch3/PCSE/NEX-GDDP-CMIP6/output/sensitivity/default//rice_output_ssp585_default_triple.nc
+rice 0 SSP126 mean: 1.4837846116553166
+rice 0 SSP126 std: 8.336595393470105
+rice
+plot end
