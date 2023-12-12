@@ -30,11 +30,9 @@ rcParams.update(params)
 if __name__ == '__main__':
     import glob, os, shutil
     run='TAGP'
-    scenario = 'CR'# optimized CR
-    path = '/stu01/xuqch3/finished/data'
-
+    scenario = 'optimized'# optimized CR
     df = pd.DataFrame()
-    optimized_distribution = f"{path}/PCSE/output/adaptation/{scenario}/{scenario}_distribution_{run}.nc"
+    optimized_distribution = f"/stu01/xuqch3/finished/data/PCSE/output/adaptation/{scenario}/{scenario}_distribution_{run}.nc"
     Figout = "./"
     distribution = xr.open_dataset(optimized_distribution)[f'{run}']
     crop = xr.where(distribution > -1, 1, np.nan).groupby('year').sum(...)
@@ -56,11 +54,11 @@ if __name__ == '__main__':
     linestyles = ['solid', 'solid', 'solid', 'solid', 'dotted', 'dashed', 'dashdot', 'solid', 'solid']
     fig, ax = plt.subplots(1, 1, figsize=(10, 5))
     rice_land.plot.line(x='year', label='Rice', linewidth=lines[1], linestyle=linestyles[1],
-                        alpha=alphas[1], color=colors[0])  # ,color = 'blue'
+                        alpha=alphas[1], color=colors[0], marker='D')  # ,color = 'blue'
     maize_land.plot.line(x='year', label='Maize', linewidth=lines[2], linestyle=linestyles[2],
-                         alpha=alphas[2], color=colors[1])  # ,color = 'green
+                         alpha=alphas[2], color=colors[1], marker='D')  # ,color = 'green
     soybean_land.plot.line(x='year', label='Soybean', linewidth=lines[0], linestyle=linestyles[0],
-                           alpha=alphas[0], color=colors[2])  # ,color = 'orangered'
+                           alpha=alphas[0], color=colors[2], marker='D')  # ,color = 'orangered'
 
     # ax.axhline(y=0, color='gray', linestyle='--')
     ax.set_ylabel('Proportion (%)', fontsize=20)

@@ -27,13 +27,15 @@ params = {'backend': 'ps',
           'axes.unicode_minus': False,
           'text.usetex': False}
 rcParams.update(params)
-fname = 'D:/NCL/data/NEshp/NE.shp'
+# fname = '/stu01/xuqch3/PCSE/scripts/NEshp/NE.shp'
+fname = '/stu01/xuqch3/PCSE/scripts/NEshp/NE.shp'
 fig = plt.figure(figsize=(5, 5))  # figsize=(5, 5)
 ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
 shape_feature = ShapelyFeature(Reader(fname).geometries(),
                                ccrs.PlateCarree(), facecolor='none')
 
-maskfile_Crop = 'F:/PCSE/crop/crop.nc'
+# maskfile_Crop = 'F:/PCSE/crop/crop.nc'
+maskfile_Crop = "/tera04/zhwei/PCSE/data/crop_distribution/crop.nc"
 crop = xr.open_dataset(maskfile_Crop)
 ds1 = crop
 # ds1['trend'] = crop.crop
@@ -44,16 +46,22 @@ ds_a3 = ds1.where(crop.crop == 2.0).squeeze()
 lons2d, lats2d = np.meshgrid(ds1.lon, ds1.lat)
 colors = ['#62BEA6', '#FDBA6B', '#EB6046']
 
-plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='^', color=colors[0], label='Rice', s=15)
-plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='o', color=colors[1], label='Maize', s=15)
-plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='D', color=colors[2], label='Soybean', s=15)
+crop_all = xr.where(crop.crop >= 0, 1, np.nan).sum(...).values
+rice_proportion = xr.where(crop.crop == 0.0, 1, np.nan).sum(...).values
+maize_proportion = xr.where(crop.crop == 1.0, 1, np.nan).sum(...).values
+soybean_proportion = xr.where(crop.crop == 2.0, 1, np.nan).sum(...).values
+print(soybean_proportion)
+plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='^', color=colors[0], label=f'Rice: {rice_proportion/crop_all*100 :.1f}%', s=20)
+plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='o', color=colors[1], label=f'Maize: {maize_proportion/crop_all*100 :.1f}%', s=20)
+plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='D', color=colors[2], label=f'Soybean: {soybean_proportion/crop_all*100 :.1f}%', s=20)
 plt.scatter(lons2d[0, 0], lats2d[0, 0], marker='o', color='w', s=40)
 plt.scatter(lons2d, lats2d, s=ds_a1["trend"].values, marker='^', color=colors[0])
 plt.scatter(lons2d, lats2d, s=ds_a2["trend"].values, marker='o', color=colors[1])
 plt.scatter(lons2d, lats2d, s=ds_a3["trend"].values, marker='D', color=colors[2])
 # plt.legend(loc='upper right')
-ax.legend(loc='upper right', shadow=False, fontsize=15)
+ax.legend(loc='upper right', shadow=False, fontsize=14)
 # ax.set_title('Crop Distribution', fontsize=14)
+
 ax.set_extent([118, 136, 38, 55])
 ax.set_xticks([120, 125, 130, 135], crs=ccrs.PlateCarree())
 ax.set_yticks([40, 45, 50, 55], crs=ccrs.PlateCarree())
@@ -64,5 +72,6 @@ ax.yaxis.set_major_formatter(lat_formatter)
 
 ax.add_feature(shape_feature)
 # ax.autoscale(tight=True)
-plt.savefig('crop_distribution.pdf', format='pdf', dpi=800)
-plt.show()
+plt.savefig('crop_distribution.eps', format='eps', dpi=800)
+plt.savefig('crop_distribution.png', format='png', dpi=800)
+# plt.show()

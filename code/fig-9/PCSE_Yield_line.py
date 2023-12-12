@@ -33,30 +33,30 @@ if __name__ == '__main__':
     import glob, os, shutil
 
     run = 'TAGP'
-    scenario = 'optimized'# optimized CR
+    scenario = 'CR'# optimized CR
     # ========================================================================================================================
-    path = '/stu01/xuqch3/finished/data/'
-    pathin = f"{path}/PCSE/output/adaptation/sowing/"
+    path = "/stu01/xuqch3/finished/data/PCSE/output/adaptation/sowing/"
 
-    CR_distribution = f"{path}/PCSE/output/adaptation/{scenario}/{scenario}_distribution_{run}.nc"
+    CR_distribution = f"/stu01/xuqch3/finished/data/PCSE/output/adaptation/{scenario}/{scenario}_distribution_{run}.nc"
     distribution = xr.open_dataset(CR_distribution)[f'{run}']
     df = pd.DataFrame()
 
     Figout = './'
-    maskfile_Crop = f"{path}/crop/crop.nc"
+    maskfile_Crop = "/tera04/zhwei/PCSE/data/crop_distribution/crop.nc"
     crop = xr.open_dataset(maskfile_Crop).crop
     names = ['rice', 'maize', 'soybean']
 
     idxs = [0, 1, 2]
+    # colors = ['#4B66AD', '#62BEA6', '#FDBA6B', '#EB6046']
     colors = ['#82B0D2', '#FFBE7A', '#FA7F6F']
 
-    VarFile1 = f"{path}/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
+    VarFile1 = f"/stu01/xuqch3/finished/data/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
     print(VarFile1)
     with xr.open_dataset(VarFile1) as ds1:
         ds1 = ds1[f"{run}"]
         ds_a1 = ds1.where(distribution == 0, drop=True)
 
-        default_rice_input = xr.open_dataset(f'{pathin}/rice_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
+        default_rice_input = xr.open_dataset(f'{path}/rice_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
         default_rice = default_rice_input.where(distribution == 0, drop=True)[0, :, :]
         default_rice = default_rice.mean(...)
 
@@ -66,13 +66,13 @@ if __name__ == '__main__':
         print(f'{scenario} ' + 'rice std: ' + str(rice_land.std(...).values))
         rice_land = rice_land.reindex(year=default_rice_input.year)
 
-    VarFile2 = f"{path}/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
+    VarFile2 = f"/stu01/xuqch3/finished/data/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
     print(VarFile2)
     with xr.open_dataset(VarFile2) as ds2:
         ds2 = ds2[f"{run}"]
         ds_a2 = ds2.where(distribution == 1, drop=True)
 
-        default_maize_input = xr.open_dataset(f'{pathin}/maize_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
+        default_maize_input = xr.open_dataset(f'{path}/maize_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
         default_maize = default_maize_input.where(distribution == 1, drop=True)[0, :, :]
         default_maize = default_maize.mean(...)
 
@@ -82,13 +82,13 @@ if __name__ == '__main__':
         print(f'{scenario} ' + 'maize std: ' + str(maize_land.std(...).values))
         maize_land = maize_land.reindex(year=default_maize_input.year)
 
-    VarFile3 = f"{path}/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
+    VarFile3 = f"/stu01/xuqch3/finished/data/PCSE/output/adaptation/{scenario}/{scenario}_Yield_{run}.nc"
     print(VarFile3)
     with xr.open_dataset(VarFile3) as ds3:
         ds3 = ds3[f"{run}"]
         ds_a3 = ds3.where(distribution == 2, drop=True)
 
-        default_soybean_input = xr.open_dataset(f'{pathin}/soybean_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
+        default_soybean_input = xr.open_dataset(f'{path}/soybean_{run}_output_ssp585_sowing_Max_Yield_default.nc')[f"{run}"]
         default_soybean = default_soybean_input.where(distribution == 2, drop=True)[0, :, :]
         default_soybean = default_soybean.mean(...)
 
@@ -105,11 +105,11 @@ if __name__ == '__main__':
     linestyles = ['solid', 'solid', 'solid', 'solid', 'dotted', 'dashed', 'dashdot', 'solid', 'solid']
     fig, ax = plt.subplots(1, 1, figsize=(10, 5))
     rice_land.plot.line(x='year', label='Rice', linewidth=lines[1], linestyle=linestyles[1],
-                        alpha=alphas[1], color=colors[0])  # ,color = 'blue'
+                        alpha=alphas[1], color=colors[0], marker='D')  # ,color = 'blue'
     maize_land.plot.line(x='year', label='Maize', linewidth=lines[2], linestyle=linestyles[2],
-                         alpha=alphas[2], color=colors[1])  # ,color = 'green
+                         alpha=alphas[2], color=colors[1], marker='D')  # ,color = 'green
     soybean_land.plot.line(x='year', label='Soybean', linewidth=lines[0], linestyle=linestyles[0],
-                           alpha=alphas[0], color=colors[2])  # ,color = 'orangered'
+                           alpha=alphas[0], color=colors[2], marker='D')  # ,color = 'orangered'
 
     ax.axhline(y=0, color='gray', linestyle='--')
     ax.set_ylabel('Yield Change (%)', fontsize=20)
